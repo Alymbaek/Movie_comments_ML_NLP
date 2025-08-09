@@ -114,9 +114,6 @@ class MovieSerializer(serializers.ModelSerializer):
 
 
 class RatingSerializer(serializers.ModelSerializer):
-    created_date = serializers.DateTimeField(format='%d-%m-%Y-%H-%M')
-    user = ProfileSimpleSerializer()
-    movie = MovieSerializer()
 
     class Meta:
         model = Rating
@@ -132,7 +129,6 @@ class RatingSimpleSerializer(serializers.ModelSerializer):
 
 
 class RatingsSimpleSerializer(serializers.ModelSerializer):
-    user = ProfileSimpleSerializer()
     check_comment = serializers.SerializerMethodField()
 
     class Meta:
